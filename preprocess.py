@@ -130,10 +130,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     dicoms = get_dicoms(args.input_directory)
 
-    work = [
-        (dicom_names, args.mip_directory, args.nifti_directory, args.root)
-        for dicom_names in dicoms
-    ]
     results = p_umap(
         process_series,
         dicoms,
